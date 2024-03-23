@@ -421,6 +421,11 @@ blockquote p {
   padding-bottom: 3px;
 }
 
+.navigation .icon{
+  margin-right: 3px;
+  display: inline-block !important;
+}
+
 .navigation ul li .current, .navigation ul li a:hover, .navigation ul li a:focus, .navigation .current a {
   color: var(--darklilac);
   opacity: 1;
@@ -1847,8 +1852,13 @@ footer p, footer a {
 
   .navigation a {
     margin-left: 0;
-    width: 100% !important;
+    width: fit-content !important;
     display: block;
+  }
+
+  .navigation .icon{
+    margin-right: 10px;
+    display: inline-block !important;
   }
 
   .navigation label {
@@ -1899,7 +1909,8 @@ footer p, footer a {
   }
 
   .navigation .sub-menu li a {
-    color: var(--blue);
+    color: var(--lilac);
+    width: fit-content;
   }
 
   .sub-menu li a:hover {
@@ -1983,8 +1994,13 @@ footer p, footer a {
 
   .navigation a {
     margin-left: 0;
-    width: 100% !important;
+    width: fit-content !important;
     display: block;
+  }
+
+  .navigation .icon{
+    margin-right: 10px;
+    display: inline-block !important;
   }
 
   .navigation label {
@@ -1992,7 +2008,7 @@ footer p, footer a {
     display: block;
     right: 0;
     top: 7px;
-    color: var(--blue);
+    color: var(--lilac);
     min-height: 2.25em;
     padding: .45em;
     font-size: 1.1em;
@@ -2035,7 +2051,8 @@ footer p, footer a {
   }
 
   .navigation .sub-menu li a {
-    color: var(--blue);
+    color: var(--lilac);
+    width: fit-content;
   }
   
   .sub-menu li a:hover {
