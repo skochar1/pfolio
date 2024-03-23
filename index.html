@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Shreya Kochar's Portfolio Site</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/simplegrid.css">
+        <link rel="stylesheet" href="css/icomoon.css">
+        <link rel="stylesheet" href="css/lightcase.css">
+        <link rel="stylesheet" href="js/owl-carousel/owl.carousel.css" />
+        <link rel="stylesheet" href="js/owl-carousel/owl.theme.css" />
+        <link rel="stylesheet" href="js/owl-carousel/owl.transitions.css" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="images/Shreya Logo 2.svg">
+    </head>
+        <body id="home">
+            <!-- Header -->
+            <header id="top-header" class="header-home">
+                <div class="grid">
+                    <div class="col-1-1">
+                        <div class="content">
+                            <div class="logo-wrap">
+                                <a href="/" class="logo"></a>
+                            </div>
+                            <nav class="navigation">
+                                <input type="checkbox" id="nav-button">
+                                <label for="nav-button" onclick></label>
+                                <ul class="nav-container">
+                                    <li><a href="/#work" class="current">Work</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#research">Current Research</a></li>
+                                            <li><a href="#projects">Past Projects & Publications</a></li>
+                                            <li><a href="#experience">Experience</a></li>
+                                            <li><a href="#honors">Honors</a></li>
+                                            <li><a href="#service">Service</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sl-gp" href="https://github.com/shreyakochar" target="_blank"><i class="icon-github3"></i></a></li>
+                                    <li><a class="sl-ln" href="https://www.linkedin.com/in/shreyakochar/" target="_blank"><i class="icon-linkedin"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End Header -->
+
+            <!-- Parallax Section -->
+            <div class="parallax-section parallax1">
+                <div class="grid grid-pad">
+                    <div class="col-1-1">
+                        <div class="content content-header">
+                            <img class="about-pic" src="images/post/shreya_pfp.jpeg" alt="Shreya Kochar Profile Picture">
+                            <h2 class="name-title">I'm Shreya Kochar,<br>a software engineer.</h2>
+                            <p>SWE @ Microsoft Security</a><br>
+                            Co-founder of the <a href="https://www.marvelprogram.com">Marvel Research Program</a><br>
+                            MS, Computer Science '24 @ Columbia University, thesis student<br>
+                            BA, Computer Science '22 @ Wellesley College<br><br>
+                            </p>
+                            <a class="btn btn-ghost" href="#research">Current Research</a>
+                            <br><br>
+                            <a class="btn btn-ghost" href="https://drive.google.com/file/d/1oYjkuXviUZavdDS5l5mMBwZ8u3v1GYGN/view?usp=sharing" target="_blank">
+                                View CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for all images -->
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img">
+			</div>
+
+            <!-- Work Section -->
+            <div class="wrap blog-grid grey" id="work">
+                <!-- Featured Research Section -->
+                <div class="grid grid-pad">
+                    <div class="content content-header">
+                        <h3>Summary</h3>
+                        <p>insert brief summary of current work experience, topics of interest, maybe some general goals of research and broad impact,
+                            possibly some major links/socials below
+                        </p><br><br>
+
+                        <h4>Education</h4>
+                        <p><span class="p-italic">Columbia University:</span> Masters of Science in Computer Science
+                            <br>
+                            <span class="p-italic">Wellesley College:</span> Bachelor of Arts in Computer Science - Magna Cum Laude
+                            <br>
+                            <span class="p-italic">Massachusetts Institute of Technology:</span> Cross Registered Student    
+                        </p><br>
+
+                        <h4>Points of Contact</h4>
+                        <p>
+                            Email: <a href="mailto: shreya.kochar@columbia.edu">shreya.kochar@columbia.edu</a>
+                            <br>
+                            <a href="https://www.linkedin.com/in/shreyakochar/">LinkedIn</a>
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <!-- Begin Current Research Feature -->
+                    <div class="col-1-1" id="research">
+                        <h3>Current Research</h3>
+                        <p>
+                            <span class="p-italic">Predictive Privacy: Master's Thesis</span>
+                            <ul>
+                                <li>Developed a novel ’Predictive Privacy’ framework to quantify privacy harm and provide a concrete basis for regulators
+                                    and courts to assess actual injury due to the disclosure of private information.</li>
+                                <li>Constructed a comprehensive database with synthetic data, incorporating differential privacy techniques, to simulate the
+                                    statistical distribution of sensitive attributes within the American population.</li>
+                                <li>Implemented a semi-supervised machine learning algorithm to predict potential privacy risks across various disclosure
+                                    scenarios</li>
+                                <li>2 paper manuscripts (law review article and technical paper) work in progress, and masters thesis almost complete</li>
+                            </ul>
+                        </p><br><br>
+                    </div>
+                    <!-- End Current Research Feature -->
+
+                    <br>
+
+                    <!-- Begin Past Projects/Publications Feature -->
+                    <div class="col-1-1" id="projects">
+                        <h3>Past Projects & Publications</h3>
+                        <p>
+                            <span class="p-italic"><a 
+                                href="https://docs.google.com/document/d/1pmCtB_5hHfZ7vzfVMdKKdv5QrM5n0-M77DtWFvRjvtI/edit#heading=h.400kqnlcu6r1" 
+                                target="_blank">Voice-Cloning AI: Understanding Legal Implications Using the Voiceprint Definition</a></span>
+                            <ul>
+                                <li>Created a comprehensive study on the use of AI in voice cloning, analyzing the capabilities of state-of-the-art technologies
+                                    like Microsoft’s VALL-E to synthesize personalized speech from minimal data input.</li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic"><a 
+                                href="https://devpost.com/software/picket-nacou0" target="_blank">Picket</a></span>
+                            <ul>
+                                <li>Built the first digital picket line at Treehacks 2023. With the click of a button, anyone can join a coordinated 
+                                    collective of users determined to push back against unethical tech.</li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic"><a 
+                                href="https://github.com/skochar1/the-pile-state-analysis/blob/main/the-pile-analysis.pdf" 
+                                target="_blank">The Pile: US State Analysis</a></span>
+                            <ul>
+                                <li>"Designing Probes to Analyze GPT-J Predictions with Sentiment and Emotion Associations for USA Regions"</li>
+                                <li>Analyzed sentiment via the GPT-J model to view trends and emotions on specific topics within the US</li>
+                                <li><a href="https://github.com/skochar1/the-pile-state-analysis/tree/main">Project link</a></li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic"><a 
+                                href="https://ieeexplore.ieee.org/document/9668612" target="_blank">
+                                Probabilistic Analysis of Confocally Imaged Synaptic Calcium Activity (PACISCA)</a></span>
+                            <ul>
+                                <li>Co-authored a paper detailing the machine learning techniques we used to automate the detection of synaptic regions 
+                                    of interest in drosophila brain images</li>
+                                <li>Accepted by MIT's IEEE URTC conference for presentation & publication</li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic"><a 
+                                href="https://github.com/melguzman/winterest" 
+                                target="_blank">Winterest: Networking App for Wellesley</a></span>
+                            <ul>
+                                <li>Winterest is a social media platform for Wellesley students and alumni to network, as a hybrid of Tinder & LinkedIn.</li>
+                            </ul>
+                        </p><br><br>
+                    </div>
+                    <!-- End Past Projects/Publications Feature -->
+
+                    <br>
+
+                    <!-- Begin Experience Feature -->
+                    <div class="col-1-1" id="experience">
+                        <h3>Experience</h3>
+                        <p><span class="p-italic">Software Engineer @ Microsoft</span>
+                            <ul>
+                                <li>Working full time as part of Microsoft’s C & AI Security team</li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic">Software Engineering Intern @ Microsoft</span>
+                            <ul>
+                                <li>Machine Learning intern at Microsoft’s Commerce and Ecosystems department</li>
+                            </ul>
+
+                            <br>
+
+                            <span class="p-italic">Microsoft Explore Intern (SWE and PM)</span>
+
+                            <br><br>
+
+                            <span class="p-italic">CS Department Teaching Assistant @ Wellesley College</span>
+                            <ul>
+                                <li>TA’d and graded for CS232, the artificial intelligence course, and CS111, the introductory Python course</li>
+                            </ul>
+                        </p><br><br>
+                    </div>
+                    <!-- End Experience Feature -->
+
+                    <!-- Begin Honors Feature -->
+                    <div class="col-1-1" id="honors">
+                        <h3>Honors</h3>
+                        <p>
+                            <ul>
+                                <li>Invited to attend Roundtable on Law and Computer Science 2024 to represent Professor Steven M. Bellovin. Hosted @ University
+                                    of Pennsylvania.</li>
+                                <li>NSF Travel Grant to attend ACM Symposium (CS&Law ’24)</li>
+                                <li>Accepted into Stanford Treehacks and awarded travel grant to attend</li>
+                                <li><a href="https://www.linkedin.com/in/shreyakochar/details/honors/1705628784290/single-media-viewer?type=DOCUMENT&profileId=ACoAACmJXk8Bohe6ykTq7BF0OMq5_W-AjcuMI3s&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_honors_details%3BYmgzUmerQn2ba9Y5jC8%2F7w%3D%3D"
+                                    target="_blank">Harvard WeCode Tech Fellow Certification</a></li>
+                                <li>The Katharine Malone First Year Prize Nomination</li>
+                            </ul>
+                        </p><br><br>
+                    </div>
+                    <!-- End Honors Feature -->
+
+                    <!-- Begin Service Feature -->
+                    <div class="col-1-1" id="service">
+                        <h3>Service</h3>
+                        <p>
+                            <ul>
+                                <li>Associate Editor @ the <a href="https://emerginginvestigators.org/" target="_blank">Journal of Emerging Investigators</a></li>
+                                <li>Co-founder & Program Co-Director @ the <a href="https://www.marvelprogram.com" target="_blank">Marvel Research Program</a></li>
+                                    <ul>
+                                        <li>I co-founded this program (previously called the Python Research Program) in order to teach middle and high school 
+                                            students the basics of programming, give them hands-on experience developing projects in python, and prepare them 
+                                            for competitive programming.</li>
+                                        <li>Our goal is to inspire students to pursue technical roles and overcome challenges as they begin their programming 
+                                            journey.</li>
+                                    </ul>
+                                <li>Student Volunteer @ Girls Who Code</li>
+                                <li>Senior Tutor @ Science Gurus</li>
+                            </ul>
+                        </p><br><br>
+                    </div>
+                    <!-- End Service Feature -->
+                </div>
+                <!-- End Section -->
+            </div>
+            <!-- End Work Section -->
+
+            <!-- Footer -->
+            <footer class="wrap">
+                <div class="social-footer">
+                    <div class="grid grid-pad">
+                        <div class="col-1-1" >
+                            <div class="content">
+                                <div class="logo-wrap">
+                                    <a href="/"><img class="logo-footer" src="images/Shreya Logo Alt.svg"></a>
+                                </div>
+                                <p class="copyright"><br>© Copyright 2024 - Made by Andrew Wang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            <!-- JS -->
+            <script src="js/jquery.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/mixitup.js"></script>
+            <script src="js/smoothscroll.js"></script>
+            <script src="js/jquery.nav.js"></script>
+            <script src="js/owl-carousel/owl.carousel.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+            <script src="js/jquery.counterup.min.js"></script>
+            <script src="js/lightcase.min.js"></script>
+            </body>
+        </html>
