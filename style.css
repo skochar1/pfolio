@@ -423,6 +423,7 @@ blockquote p {
 
 .navigation .icon{
   margin-right: 3px;
+  width: fit-content !important;
   display: inline-block !important;
 }
 
@@ -1858,6 +1859,7 @@ footer p, footer a {
 
   .navigation .icon{
     margin-right: 10px;
+    width: fit-content !important;
     display: inline-block !important;
   }
 
@@ -1866,7 +1868,7 @@ footer p, footer a {
     display: block;
     right: 0;
     top: 7px;
-    color: var(--blue);
+    color: var(--lilac);
     min-height: 2.25em;
     padding: .45em;
     font-size: 1.1em;
@@ -2000,6 +2002,7 @@ footer p, footer a {
 
   .navigation .icon{
     margin-right: 10px;
+    width: fit-content !important;
     display: inline-block !important;
   }
 
