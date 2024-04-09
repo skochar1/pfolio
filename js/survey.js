@@ -1,4 +1,4 @@
-const jsonFilePath = 'Form_URLs.json';
+const jsonFilePath = './Form_URLs.json';
 
 async function fetchAndInitializeQuizzes() {
     if (!localStorage.getItem('quizzes') || !localStorage.getItem('unselectedQuizzes')) {
