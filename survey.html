@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Redirect</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Use full screen height */
+            margin: 0; /* Remove default body margin */
+        }
+        
+        #randomQuizButton {
+            padding: 20px 40px; 
+            font-size: 20px;
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px; 
+            background-color: #007bff; 
+            color: white; 
+            transition: background-color 0.3s; 
+        }
+
+        /* Hover effect for the button */
+        #randomQuizButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <button id="randomQuizButton">Click Here for Survey</button>
