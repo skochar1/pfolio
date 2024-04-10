@@ -3,7 +3,7 @@ const axios = require('axios');
 const cors = require('cors');
 // Use CORS middleware to allow requests from any origin
 app.use(cors({
-    origin: 'https://skochar1.github.io'
+    origin: 'https://skochar1.github.io/survey'
   }));
 const Buffer = require('buffer').Buffer; // Node.js buffer module for base64 encoding
 const app = express();
