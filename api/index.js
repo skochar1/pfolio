@@ -1,12 +1,13 @@
 const express = require('express');
-const axios = require('axios');
 const cors = require('cors');
-// Use CORS middleware to allow requests from any origin
+const axios = require('axios');
+const Buffer = require('buffer').Buffer;
+const app = express();
+
 app.use(cors({
     origin: 'https://skochar1.github.io'
-  }));
-const Buffer = require('buffer').Buffer; // Node.js buffer module for base64 encoding
-const app = express();
+}));
+app.use(express.json());
 app.use(express.json());
 
 const token = process.env.GITHUB_TOKEN; // Securely store and use your token
