@@ -1,6 +1,6 @@
 // Endpoint URL for your backend service
 // Replace this URL with the actual URL of your deployed backend
-const backendUrl = 'https://thesis-survey-stack.vercel.app/';
+const backendUrl = 'https://skochar1-github-io.vercel.app/';
 
 async function fetchAndInitializeQuizzes() {
     if (!localStorage.getItem('quizzes') || !localStorage.getItem('unselectedQuizzes')) {
