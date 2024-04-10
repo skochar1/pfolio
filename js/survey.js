@@ -1,14 +1,19 @@
-const jsonFilePath = './Form_URLs.json';
+// Endpoint URL for your backend service
+// Replace this URL with the actual URL of your deployed backend
+const backendUrl = 'https://thesis-survey-stack.vercel.app/';
 
 async function fetchAndInitializeQuizzes() {
     if (!localStorage.getItem('quizzes') || !localStorage.getItem('unselectedQuizzes')) {
         try {
-            const response = await fetch(jsonFilePath);
+            // Fetch quizzes from the backend instead of a local JSON file
+            const response = await fetch(`${backendUrl}/quizzes`);
+            if (!response.ok) throw new Error('Failed to fetch quizzes');
             const quizzes = await response.json();
+
             localStorage.setItem('quizzes', JSON.stringify(quizzes));
             localStorage.setItem('unselectedQuizzes', JSON.stringify(quizzes));
         } catch (error) {
-            console.error('Error fetching the JSON file:', error);
+            console.error('Error fetching quizzes from backend:', error);
         }
     }
 }
@@ -28,8 +33,26 @@ function goToRandomQuizUrl() {
     // Update the storage to reflect the quiz has been selected
     localStorage.setItem('unselectedQuizzes', JSON.stringify(unselectedQuizzes));
 
-    // Redirect the user to the selected quiz URL
-    window.location.href = selectedQuiz.URL;
+    // Instead of redirecting directly, notify the backend about the selection (optional)
+    // This step could be used to update the server-side state or perform logging
+    fetch(`${backendUrl}/select-quiz`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ quizName: selectedQuiz['Quiz Name'] }),
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect the user to the selected quiz URL after notifying the backend
+            window.location.href = selectedQuiz.URL;
+        } else {
+            console.error('Failed to update quiz selection on the backend');
+        }
+    })
+    .catch(error => {
+        console.error('Error notifying backend about quiz selection:', error);
+    });
 }
 
 window.onload = async () => {
