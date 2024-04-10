@@ -1,5 +1,5 @@
 // Endpoint URL for your backend service
-const backendUrl = 'https://skochar1-github-io.vercel.app/';
+const backendUrl = 'https://www.skochar1-github-io.vercel.app/';
 
 const jsonFilePath = 'Form_URLs.json';
 
