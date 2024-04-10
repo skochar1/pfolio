@@ -5,10 +5,6 @@ const Buffer = require('buffer').Buffer;
 const app = express();
 
 app.use(cors({
-    origin: 'https://skochar1.github.io', // Specify allowed origin(s)
-    methods: ['GET', 'POST', 'OPTIONS'], // Specify allowed methods
-    allowedHeaders: ['Content-Type'], // Specify allowed headers
-    credentials: true, // If your frontend needs to send cookies or authentication info
     optionsSuccessStatus: 200
 }));
 app.use(express.json());
