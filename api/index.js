@@ -4,9 +4,9 @@ const axios = require('axios');
 const Buffer = require('buffer').Buffer;
 const app = express();
 
-app.use(cors({
-    optionsSuccessStatus: 200
-}));
+app.use(cors({optionsSuccessStatus: 200}));
+app.options('*', cors());
+
 app.use(express.json());
 
 const token = process.env.GITHUB_TOKEN; // Securely store and use your token
