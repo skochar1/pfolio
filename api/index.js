@@ -6,7 +6,7 @@ app.use(express.json());
 
 const token = process.env.GITHUB_TOKEN; // Securely store and use your token
 const repoPath = 'skochar1/skochar1.github.io'; // Your GitHub username and repository
-const filePath = './Form_URLs.json'; // Path to your JSON file in the repo
+const filePath = 'Form_URLs.json'; // Path to your JSON file in the repo
 
 app.post('/update-url', async (req, res) => {
     try {

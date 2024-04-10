@@ -1,58 +1,55 @@
 // Endpoint URL for your backend service
 const backendUrl = 'https://skochar1-github-io.vercel.app/';
 
-async function fetchAndInitializeQuizzes() {
-    try {
-        const response = await fetch(`${backendUrl}/quizzes`);
-        if (!response.ok) throw new Error('Failed to fetch quizzes');
-        const quizzes = await response.json();
+const jsonFilePath = 'Form_URLs.json';
 
-        if (!localStorage.getItem('quizzes')) {
+async function fetchAndInitializeQuizzes() {
+    if (!localStorage.getItem('quizzes') || !localStorage.getItem('unselectedQuizzes')) {
+        try {
+            // Fetch quizzes directly from the same directory
+            const response = await fetch(jsonFilePath);
+            if (!response.ok) throw new Error('Failed to fetch quizzes');
+            const quizzes = await response.json();
+
+            // Store quizzes in localStorage for managing selections without repeats
             localStorage.setItem('quizzes', JSON.stringify(quizzes));
             localStorage.setItem('unselectedQuizzes', JSON.stringify(quizzes.map(quiz => quiz['Quiz Name'])));
+        } catch (error) {
+            console.error('Error fetching quizzes from JSON file:', error);
         }
-    } catch (error) {
-        console.error('Error fetching quizzes from backend:', error);
     }
 }
 
-async function goToRandomQuizUrl() {
+async function selectAndUpdateQuiz() {
     let quizzes = JSON.parse(localStorage.getItem('quizzes'));
-    let unselectedQuizzes = JSON.parse(localStorage.getItem('unselectedQuizzes'));
+    let minCount = Math.min(...quizzes.map(quiz => quiz.Count));
+    let candidates = quizzes.filter(quiz => quiz.Count === minCount);
     
-    if (unselectedQuizzes.length === 0) {
-        unselectedQuizzes = quizzes.map(quiz => quiz['Quiz Name']);
-    }
-
-    const randomQuizName = unselectedQuizzes[Math.floor(Math.random() * unselectedQuizzes.length)];
-    const selectedQuizIndex = quizzes.findIndex(quiz => quiz['Quiz Name'] === randomQuizName);
+    let selectedQuiz = candidates[Math.floor(Math.random() * candidates.length)];
+    selectedQuiz.Count += 1; // Increment count
     
-    if (selectedQuizIndex !== -1) {
-        // Increment the count for the selected quiz
-        quizzes[selectedQuizIndex].Count += 1;
-        // Remove the selected quiz from unselectedQuizzes
-        unselectedQuizzes = unselectedQuizzes.filter(name => name !== randomQuizName);
-
-        // Update local storage
-        localStorage.setItem('quizzes', JSON.stringify(quizzes));
-        localStorage.setItem('unselectedQuizzes', JSON.stringify(unselectedQuizzes));
-
-        // Send the updated quizzes back to the backend
-        await fetch(`${backendUrl}/update-quizzes`, {
+    // Update local storage
+    localStorage.setItem('quizzes', JSON.stringify(quizzes));
+    
+    // Send updated data back to backend
+    try {
+        const response = await fetch(`${backendUrl}update-url`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(quizzes),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(quizzes)
         });
-
+        
+        if (!response.ok) throw new Error('Failed to update quizzes');
+        
         // Redirect to the selected quiz URL
-        window.location.href = quizzes[selectedQuizIndex].URL;
-    } else {
-        console.error('Selected quiz not found');
+        window.location.href = selectedQuiz.URL;
+    } catch (error) {
+        console.error('Error:', error);
     }
 }
 
-window.onload = async () => {
-    await fetchAndInitializeQuizzes();
+document.getElementById('randomQuizButton').addEventListener('click', selectAndUpdateQuiz);
+
+window.onload = () => {
+    fetchAndInitializeQuizzes();
 };
