@@ -5,7 +5,9 @@ const Buffer = require('buffer').Buffer;
 const app = express();
 
 app.use(cors({
-    origin: 'https://skochar1.github.io'
+    origin: 'https://skochar1.github.io',
+    methods: ['GET', 'POST'], // Specify allowed methods
+    credentials: true
 }));
 app.use(express.json());
 app.use(express.json());
