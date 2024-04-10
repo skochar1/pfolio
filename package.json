@@ -1,0 +1,15 @@
+{
+  "name": "shreya-portfolio-site-master",
+  "version": "1.0.0",
+  "description": "backend for survey use",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "author": "shreya kochar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2"
+  }
+}
