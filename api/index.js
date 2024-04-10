@@ -8,7 +8,6 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 app.use(express.json());
-app.use(express.json());
 
 const token = process.env.GITHUB_TOKEN; // Securely store and use your token
 const repoPath = 'skochar1/skochar1.github.io'; // Your GitHub username and repository
