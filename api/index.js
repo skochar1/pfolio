@@ -1,5 +1,10 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
+// Use CORS middleware to allow requests from any origin
+app.use(cors({
+    origin: 'https://skochar1.github.io'
+  }));
 const Buffer = require('buffer').Buffer; // Node.js buffer module for base64 encoding
 const app = express();
 app.use(express.json());
@@ -37,3 +42,5 @@ app.post('/update-url', async (req, res) => {
         res.status(500).json({ success: false, error: 'Failed to update file' });
     }
 });
+
+app.listen(process.env.PORT || 3000, () => console.log('Server running'));
