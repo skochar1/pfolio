@@ -1,12 +1,24 @@
 const express = require('express');
-const cors = require('cors');
 const axios = require('axios');
 const Buffer = require('buffer').Buffer;
 const app = express();
 
-app.use(cors({optionsSuccessStatus: 200}));
-app.options('*', cors());
+// Custom CORS middleware
+const customCors = (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+};
 
+app.use(customCors);
 app.use(express.json());
 
 const token = process.env.GITHUB_TOKEN; // Securely store and use your token
