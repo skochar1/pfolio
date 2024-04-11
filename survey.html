@@ -10,19 +10,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Align items vertically */
             height: 100vh; /* Use full screen height */
             margin: 0; /* Remove default body margin */
+            text-align: center; /* Center the text */
         }
         
         #randomQuizButton {
-            padding: 20px 40px; 
+            padding: 20px 40px;
             font-size: 20px;
-            cursor: pointer; 
-            border: none; 
-            border-radius: 5px; 
-            background-color: #007bff; 
-            color: white; 
-            transition: background-color 0.3s; 
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Add some space between the text and the button */
         }
 
         /* Hover effect for the button */
@@ -32,7 +35,11 @@
     </style>
 </head>
 <body>
-    <button id="randomQuizButton">Click Here for Survey</button>
+    <div class="content-wrapper">
+        <p>Please only click the button once! It will take around 5-15 seconds to load the survey page for you once clicked.</p>
+        
+        <button id="randomQuizButton">Click Here for Survey</button>
+    </div>
 
     <script src="js/survey.js"></script>
 </body>
